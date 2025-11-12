@@ -48,11 +48,14 @@ public class BioskopWithScanner24 {
                 System.out.println("\n=== DAFTAR PENONTON ===");
                 for (int i = 0; i < penonton.length; i++) {
                     for (int j = 0; j < penonton[i].length; j++) {
-                        System.out.print(penonton[i][j] + "\t");
+                        if (penonton[i][j] == null) {
+                            System.out.print("***\t");
+                        } else {
+                            System.out.print(penonton[i][j] + "\t");
+                        }
                     }
                     System.out.println();
                 }
-
             } else if (menu == 3) {
                 System.out.println("Terima Kasih! program selesai");
                 break;

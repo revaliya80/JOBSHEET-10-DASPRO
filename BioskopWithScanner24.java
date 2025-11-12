@@ -22,13 +22,17 @@ public class BioskopWithScanner24 {
                 while (true) {
                     System.out.print("Masukkan Nama: ");
                     nama = sc.nextLine();
-                    System.out.print("Masukkan baris: ");
+                    System.out.print("Masukkan baris (1-4): ");
                     baris = sc.nextInt();
-                    System.out.print("Masukkan kolom: ");
+                    System.out.print("Masukkan kolom (1-2): ");
                     kolom = sc.nextInt();
                     sc.nextLine();
 
-                    penonton[baris - 1][kolom - 1] = nama;
+                    if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2) {
+                        System.out.println("Nomor baris atau kolom tidak tersedia. Silakan input ulang!");
+                    } else {
+                        penonton[baris - 1][kolom - 1] = nama;
+                    }
 
                     System.out.print("Input penonton lainnya? (y/n): ");
                     next = sc.nextLine();
@@ -41,7 +45,7 @@ public class BioskopWithScanner24 {
                 System.out.println("\n=== DAFTAR PENONTON ===");
                 for (int i = 0; i < penonton.length; i++) {
                     for (int j = 0; j < penonton[i].length; j++) {
-                        System.out.println(penonton[i][j] + "\t");
+                        System.out.print(penonton[i][j] + "\t");
                     }
                     System.out.println();
                 }

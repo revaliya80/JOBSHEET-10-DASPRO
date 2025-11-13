@@ -24,6 +24,14 @@ public class TugasArray2 {
             }
             System.out.println("Responden " + (i + 1) + ": " + (total / pertanyaan));
         }
+        System.out.println("Rata-rata tiap pertanyaan: ");
+        for (int j = 0; j < pertanyaan; j++) {
+            double total = 0;
+            for (int i = 0; i < responden; i++) {
+                total += nilai[i][j];
+            }
+            System.out.println("Pertanyaan " + (j + 1) + ": " + (total / responden));
+        }
         double tottalSemua = 0;
         for (int i = 0; i < responden; i++) {
             for (int j = 0; j < pertanyaan;) {

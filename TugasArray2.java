@@ -12,7 +12,7 @@ public class TugasArray2 {
             System.out.println("Responden ke-" + (i + 1));
 
             for (int j = 0; j < pertanyaan; j++) {
-                System.out.println("Nilai Pertanyaan ke-" + (j + 1) + ": ");
+                System.out.print("Nilai Pertanyaan ke-" + (j + 1) + ": ");
                 nilai[i][j] = sc.nextInt();
             }
 

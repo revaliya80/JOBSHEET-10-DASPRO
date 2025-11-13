@@ -4,10 +4,10 @@ public class SIAKAD24 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.err.println("Masukkan jumlah mahasiswa: ");
+        System.out.print("Masukkan jumlah mahasiswa: ");
         int jumlahMahasiswa = sc.nextInt();
 
-        System.out.println("Masukkan jumlah mata kuliah: ");
+        System.out.print("Masukkan jumlah mata kuliah: ");
         int jumlahMatkul = sc.nextInt();
 
         int[][] nilai = new int[jumlahMahasiswa][jumlahMatkul];
@@ -28,13 +28,12 @@ public class SIAKAD24 {
         System.out.println("\n===========================");
         System.out.println("Rata-rata nilai setiap mata kuliah: ");
 
-        for (int j = 0; j < 3; j++) {
+        for (int j = 0; j < jumlahMahasiswa; j++) {
             double totalPerMatkul = 0;
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < jumlahMatkul; i++) {
                 totalPerMatkul += nilai[i][j];
             }
-
             double rataMatkul = totalPerMatkul / jumlahMahasiswa;
             System.out.println("Mata kuliah " + (j + 1) + ": " + rataMatkul);
         }

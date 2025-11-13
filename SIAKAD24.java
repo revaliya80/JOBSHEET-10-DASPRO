@@ -37,5 +37,6 @@ public class SIAKAD24 {
             double rataMatkul = totalPerMatkul / jumlahMahasiswa;
             System.out.println("Mata kuliah " + (j + 1) + ": " + rataMatkul);
         }
+        sc.close();
     }
 }

@@ -4,18 +4,25 @@ public class SIAKAD24 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[][] nilai = new int[4][3];
+        System.err.println("Masukkan jumlah mahasiswa: ");
+        int jumlahMahasiswa = sc.nextInt();
 
-        for (int i = 0; i < nilai.length; i++) {
+        System.out.println("Masukkan jumlah mata kuliah: ");
+        int jumlahMatkul = sc.nextInt();
+
+        int[][] nilai = new int[jumlahMahasiswa][jumlahMatkul];
+
+        for (int i = 0; i < jumlahMahasiswa; i++) {
             System.out.println("Input nilai mahasiswa ke-" + (i + 1));
             double totalPerSiswa = 0;
 
-            for (int j = 0; j < nilai[i].length; j++) {
+            for (int j = 0; j < jumlahMatkul; j++) {
                 System.out.print("Nilai mata kuliah " + (j + 1) + ": ");
                 nilai[i][j] = sc.nextInt();
                 totalPerSiswa += nilai[i][j];
             }
-            System.out.println("Nilai rata-rata: " + totalPerSiswa / 3);
+            double rataSiswa = totalPerSiswa / jumlahMatkul;
+            System.out.println("Nilai rata-rata ke-" + (i + 1) + ": " + rataSiswa);
         }
 
         System.out.println("\n===========================");
@@ -28,7 +35,8 @@ public class SIAKAD24 {
                 totalPerMatkul += nilai[i][j];
             }
 
-            System.out.println("Mata kuliah " + (j + 1) + ": " + totalPerMatkul / 4);
+            double rataMatkul = totalPerMatkul / jumlahMahasiswa;
+            System.out.println("Mata kuliah " + (j + 1) + ": " + rataMatkul);
         }
     }
 }
